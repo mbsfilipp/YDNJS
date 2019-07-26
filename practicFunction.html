@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Function in function</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //Add local function in function
+            function foo(x = (
+                function(y) {
+                    return y + 11
+                })(55)){
+                console.log(x);
+            }
+            foo();
+            
+        </script>
+    </body>
+</html>

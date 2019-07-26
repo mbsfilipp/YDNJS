@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Spread and rest</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            //Add local function spread
+            function spreadArray(args) {
+                if(Array.isArray(args)) {
+                    console.log(...args);
+                }else console.log(args);
+            }
+
+            function argFilter() {
+                let array = [].slice.call(arguments);
+                array = array.filter(function(v) {
+                    return v % 2 == 0;
+                });
+                return spreadArray(array);
+            }
+
+            argFilter(1, 2, 6, 8, 7);
+        </script>
+    </body>
+</html>
